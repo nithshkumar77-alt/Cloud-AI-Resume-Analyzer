@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud AI Resume Analyzer</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">☁️ Resume<span>AI</span></div>
+    <div class="badge">Cloud Project</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">AI-READY CLOUD APPLICATION</p>
+      <h1>Analyze your resume.<br><span>Build your next opportunity.</span></h1>
+      <p class="subtitle">Upload or paste your resume, add a job description, and get an ATS-style analysis with skills, matches and improvement suggestions.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="card input-card">
+        <div class="card-title">
+          <div><h2>Resume</h2><p>Paste your resume or upload a TXT file.</p></div>
+          <label class="upload">
+            Upload TXT
+            <input type="file" id="fileInput" accept=".txt">
+          </label>
+        </div>
+        <textarea id="resume" placeholder="Paste your resume here..."></textarea>
+      </div>
+
+      <div class="card input-card">
+        <div class="card-title">
+          <div><h2>Job Description</h2><p>Optional — improves keyword matching.</p></div>
+        </div>
+        <textarea id="jobDescription" placeholder="Paste the job description here..."></textarea>
+      </div>
+    </section>
+
+    <button class="analyze-btn" id="analyzeBtn">Analyze Resume <span>→</span></button>
+    <p class="status" id="status"></p>
+
+    <section id="results" class="results hidden">
+      <div class="score-card card">
+        <div>
+          <p class="eyebrow">ATS-STYLE SCORE</p>
+          <h2 id="score">0<span>/100</span></h2>
+          <p id="scoreText">Your analysis is ready.</p>
+        </div>
+        <div class="score-ring"><div id="ringValue">0%</div></div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>✓ Matched Skills</h3>
+          <div id="matched" class="chips"></div>
+        </div>
+        <div class="card">
+          <h3>+ Resume Skills</h3>
+          <div id="skills" class="chips"></div>
+        </div>
+        <div class="card">
+          <h3>⚠ Missing Job Skills</h3>
+          <div id="missing" class="chips"></div>
+        </div>
+        <div class="card">
+          <h3>▦ Sections Detected</h3>
+          <div id="sections" class="chips"></div>
+        </div>
+      </div>
+
+      <div class="card suggestions">
+        <h3>💡 Improvement Suggestions</h3>
+        <ul id="suggestions"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>Cloud AI Resume Analyzer · Student Project</footer>
+  <script src="/static/script.js"></script>
+</body>
+</html>

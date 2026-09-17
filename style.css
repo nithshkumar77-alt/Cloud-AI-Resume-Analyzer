@@ -1,0 +1,105 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #172033;
+  --muted: #68738a;
+  --line: #e3e7ef;
+  --primary: #5b4df7;
+  --primary2: #7c6cff;
+  --success: #16845b;
+  --danger: #bd4b4b;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+.topbar {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  background: white;
+  border-bottom: 1px solid var(--line);
+}
+.brand { font-size: 22px; font-weight: 800; }
+.brand span { color: var(--primary); }
+.badge {
+  background: #f0efff;
+  color: var(--primary);
+  padding: 8px 13px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.container { width: min(1120px, 92%); margin: auto; }
+.hero { text-align: center; padding: 70px 0 40px; }
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+.hero h1 { font-size: clamp(38px, 6vw, 66px); line-height: 1.03; margin: 0; letter-spacing: -2px; }
+.hero h1 span { color: var(--primary); }
+.subtitle { max-width: 680px; margin: 22px auto 0; color: var(--muted); font-size: 17px; line-height: 1.7; }
+.workspace { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(28, 39, 65, .04);
+}
+.card-title { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+.card h2 { margin: 0; font-size: 19px; }
+.card-title p { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+textarea {
+  width: 100%; min-height: 300px; resize: vertical; border: 1px solid var(--line);
+  border-radius: 13px; padding: 15px; margin-top: 18px; font: inherit;
+  outline: none; background: #fafbfe; color: var(--text);
+}
+textarea:focus { border-color: var(--primary2); box-shadow: 0 0 0 3px #e9e7ff; }
+.upload {
+  cursor: pointer; background: #f0efff; color: var(--primary);
+  padding: 9px 12px; border-radius: 10px; font-size: 12px; font-weight: 800;
+}
+.upload input { display: none; }
+.analyze-btn {
+  display: block; margin: 22px auto; border: 0; background: var(--primary); color: white;
+  padding: 15px 25px; border-radius: 12px; font-size: 15px; font-weight: 800; cursor: pointer;
+  box-shadow: 0 10px 24px rgba(91,77,247,.25);
+}
+.analyze-btn:hover { background: var(--primary2); transform: translateY(-1px); }
+.status { text-align: center; min-height: 20px; color: var(--muted); }
+.hidden { display: none; }
+.results { padding-bottom: 60px; }
+.score-card { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.score-card h2 { font-size: 54px; margin: 4px 0; }
+.score-card h2 span { font-size: 18px; color: var(--muted); }
+.score-card p:last-child { color: var(--muted); margin: 0; }
+.score-ring {
+  width: 112px; height: 112px; border-radius: 50%; display: grid; place-items: center;
+  background: conic-gradient(var(--primary) 0deg, #e8eaf1 0deg);
+}
+.score-ring div { width: 82px; height: 82px; border-radius: 50%; background: white; display: grid; place-items: center; font-weight: 800; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.card h3 { margin: 0 0 17px; font-size: 16px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { padding: 7px 10px; border-radius: 999px; background: #f0efff; color: #4c41ca; font-size: 12px; font-weight: 700; }
+.chip.missing { background: #fff0f0; color: var(--danger); }
+.chip.ok { background: #ebf8f2; color: var(--success); }
+.suggestions { margin-top: 18px; }
+.suggestions li { margin: 10px 0; color: var(--muted); line-height: 1.55; }
+footer { text-align: center; padding: 30px; color: var(--muted); font-size: 12px; }
+@media (max-width: 760px) {
+  .workspace, .grid { grid-template-columns: 1fr; }
+  .hero { padding-top: 45px; }
+  .hero h1 { letter-spacing: -1px; }
+  .score-card { gap: 20px; }
+}
